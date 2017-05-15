@@ -1,3 +1,12 @@
+## Modified Model Results (Table 1)
+#### Small modified model
+```
+th main.lua -data_dir data/ptb -savefile ptb-char-small -EOS '+' -rnn_size 300 -use_chars 1 -use_words 0 -char_vec_size 15 -highway_layers 1 -kernels '{1,1,2,3}' -feature_maps '{200,500,500,500}' -gpuid 0 -cudnn 1
+```
+#### Large modified model
+```
+th main.lua -data_dir data/ptb -savefile ptb-char-large -EOS '+' -rnn_size 650 -use_chars 1 -use_words 0 -char_vec_size 15 -highway_layers 2 -kernels '{1,2,3,4,5}' -feature_maps '{200,600,600,600,600}' -gpuid 0 -cudnn 1
+```
 ## Character-Aware Neural Language Models
 Code for the paper [Character-Aware Neural Language Models](http://arxiv.org/abs/1508.06615) 
 (AAAI 2016).
