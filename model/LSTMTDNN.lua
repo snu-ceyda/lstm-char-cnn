@@ -53,7 +53,7 @@ function LSTMTDNN.lstmtdnn(rnn_size, n, dropout, word_vocab_size, word_vec_size,
 		local char_cnn = TDNN.tdnn(length, char_vec_size, feature_maps, kernels)
 		char_cnn.name = 'cnn' -- change name so we can refer to it later
 		local cnn_output = char_cnn(char_vec)
-		input_size_L = torch.Tensor(feature_maps):sum()
+		input_size_L = feature_maps[2]
 	        if use_words == 1 then
 		    word_vec = word_vec_layer(inputs[2])
 		    x = nn.JoinTable(2)({cnn_output, word_vec})
